@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Weather Data</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <!--using Dom to handle user input-->
+        <form name="testData" id="testDataForm">
+            <!-- <label for="city">City</label>
+            <input type="text" name="city" id="city"> -->
+            <label for="zip">Enter Zip Code</label>
+            <input type="text" name="zip" id="zip">
+            <button type="submit" id='submitButton'>Submit</button>
+        </form>
+
+        <table class="city">
+            <tr>
+                <th>City/town</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="temp">
+            <tr>
+                <th>Current Temperature</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="high">
+            <tr>
+                <th>Today's High</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="low">
+            <tr>
+                <th>Today's Low</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="feels-like">
+            <tr>
+                <th>Feels Like</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="humidity">
+            <tr>
+                <th>Humidity</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="pressure">
+            <tr>
+                <th>Pressure</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="weather">
+            <tr>
+                <th>Weather</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
