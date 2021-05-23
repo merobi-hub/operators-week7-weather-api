@@ -10,8 +10,6 @@
     <title>Weather Data</title>
 </head>
 <body>
-    
-    <div class="container">
 
         <!--using Dom to handle user input-->
         <form name="testData" id="testDataForm">
@@ -22,14 +20,9 @@
             <button type="submit" id='submitButton'>Submit</button>
         </form>
 
-        <table class="city">
-            <tr>
-                <th>City/town</th>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-        </table>
+        <div class="container" id="city-div">
+            <h1 class="city"></h1>
+        </div>
 
         <table class="temp">
             <tr>
@@ -93,8 +86,6 @@
                 <td></td>
             </tr>
         </table>
-
-    </div>
 
 </body>
 </html>
