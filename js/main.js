@@ -15,20 +15,29 @@ form.addEventListener('submit', (event) => {
 
     event.preventDefault();
     //let query_city = document.querySelector('#city').value 
-    let query_zip = document.querySelector('#zip').value
+    let query_loc = document.querySelector('#loc').value
 
-    console.log(query_zip)
+    console.log(query_loc)
 
-    apiData(query_zip);
+    apiData(query_loc);
 })
+
 
 // get data from API
 
-const apiData = async (zip) => {
+const apiData = async (loc) => {
 
-    let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${apiKey}`)
-    console.log(response.data)
-    return loadData(response.data)
+    // use regex to route input to correct api endpoint (zip if not alpha or name if alpha)
+    var regex = /^[a-zA-Z]+$/;
+    if(!loc.match(regex)){
+        let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${loc},us&appid=${apiKey}`)
+        console.log(response.data)
+        return loadData(response.data)
+    } else {
+        let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${apiKey}`)
+        console.log(response.data)
+        return loadData(response.data)
+    }
 }
 
 // process and organize data from API
@@ -72,44 +81,36 @@ const createTables = (data) => {
     var temp = document.querySelector(".temp td")
     if (data["temp"] >= 85){
         temp.innerHTML = `<span style="color:red;">${data["temp"]}&#176;F</span>`
-    }
-    else if (data["temp"] >= 50){
+    } else if (data["temp"] >= 50){
         temp.innerHTML = `<span>${data["temp"]}&#176;F</span>`
-    }
-    else if (data["temp"] < 50){
+    } else if (data["temp"] < 50){
         temp.innerHTML = `<span style="color:blue;">${data["temp"]}&#176;F</span>`
     }
 
     var high = document.querySelector(".high td")
     if (data["high"] >= 85){
         high.innerHTML = `<span style="color:red;">${data["high"]}&#176;F</span>`
-    }
-    else if (data["high"] >= 50){
+    } else if (data["high"] >= 50){
         high.innerHTML = `<span>${data["high"]}&#176;F</span>`
-    }
-    else if (data["high"] < 50){
+    } else if (data["high"] < 50){
         high.innerHTML = `<span style="color:blue;">${data["high"]}&#176;F</span>`
     }
 
     var low = document.querySelector(".low td")
     if (data["low"] >= 85){
         low.innerHTML = `<span style="color:red;">${data["low"]}&#176;F</span>`
-    }
-    else if (data["low"] >= 50){
+    } else if (data["low"] >= 50){
         low.innerHTML = `<span>${data["low"]}&#176;F</span>`
-    }
-    else if (data["low"] < 50){
+    } else if (data["low"] < 50){
         low.innerHTML = `<span style="color:blue;">${data["low"]}&#176;F</span>`
     }
 
     var feels = document.querySelector(".feels-like td")
     if (data["feelsLike"] >= 80){
         feels.innerHTML = `<span style="color:red;">${data["feelsLike"]}&#176;F</span>`
-    }
-    else if (data["feelsLike"] >= 50){
+    } else if (data["feelsLike"] >= 50){
         feels.innerHTML = `<span>${data["feelsLike"]}&#176;F</span>`
-    }
-    else if (data["feelsLike"] < 50){
+    } else if (data["feelsLike"] < 50){
         feels.innerHTML = `<span style="color:blue;">${data["feelsLike"]}&#176;F</span>`
     }
 

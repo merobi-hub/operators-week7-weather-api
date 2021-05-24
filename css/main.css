@@ -13,7 +13,7 @@ body {
 
 }
 
-#city-div {
+#table-div {
 
     text-align: center;
 
@@ -22,18 +22,61 @@ body {
 
 table {
 
-    width: 100px;
+    width: 185px;
     background-color: white;
     text-align: center;
     margin: 3vh;
-    border-radius: 10px;
-    margin-left: 47%;
+    border-radius: 5px;
+    margin-left: 45%;
 
 }
 
 table th {
 
     background-color: rgb(167, 166, 166);
+    color: white;
+
+}
+
+.temp th {
+
+    background-color: red;
+
+}
+
+.high th {
+
+    background-color: orange;
+
+}
+
+.low th {
+
+    background-color: yellow;
+
+}
+
+.feels-like th {
+
+    background-color: green;
+
+}
+
+.humidity th {
+
+    background-color: blue;
+
+}
+
+.pressure th {
+
+    background-color: violet;
+
+}
+
+.weather th {
+
+    background-color: black;
 
 }
 
@@ -44,6 +87,6 @@ form {
     background-color: white;
     margin-right: 45%; 
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
 
 }
