@@ -81,12 +81,38 @@ table th {
 }
 
 form {
-
+    
+    width: 250px;
+    height: 100px;
     margin-top: 10vh;
-    margin-left: 45%;
-    background-color: white;
+    margin-left: 43%;
+    padding-top: 1vh;
+    background-color: gray;
+    color: white;
     margin-right: 45%; 
     text-align: center;
     border-radius: 5px;
+
+}
+
+#submitButton {
+
+    margin-top: 1vh;
+    width: 250px;
+    height: 4.5vh;
+    border-radius: 5px;
+    font-size: 15px;
+
+}
+
+#loc {
+
+    margin-top: 1vh;
+
+}
+
+#loc-text {
+
+    font-size: 20px;
 
 }

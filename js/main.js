@@ -27,8 +27,9 @@ form.addEventListener('submit', (event) => {
 
 const apiData = async (loc) => {
 
-    // use regex to route input to correct api endpoint (zip if not alpha or name if alpha)
-    var regex = /^[a-zA-Z]+$/;
+    // use regex to route input to correct API endpoint (zip if not alpha or name if alpha)
+
+    var regex = /^[a-z A-Z]+$/;
     if(!loc.match(regex)){
         let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${loc},us&appid=${apiKey}`)
         console.log(response.data)
