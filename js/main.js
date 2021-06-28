@@ -1,10 +1,4 @@
-// import { apiKey } from "../hidden/credentials.js";
-
-//api creds
-
-const apiKey = '7064e174c6cc600e64bb4f1f78229980'
-
-// form submission
+const { apiKey } = require('../hidden/credentials.js');
 
 let form = document.querySelector('#testDataForm')
 console.log(form)
